@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="headSony" class="com.ua.impl_Sony.HeadSony"/>
+    <bean id="handSony" class="com.ua.impl_Sony.HandSony"/>
+    <bean id="legSony" class="com.ua.impl_Sony.LegSony"/>
+
+</beans>

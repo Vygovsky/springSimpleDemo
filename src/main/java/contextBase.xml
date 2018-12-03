@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-lazy-init="true">
+
+
+  <!--  <import resource="db-test.xml"/>-->
+    <import resource="sony.xml"/>
+    <import resource="toshiba.xml"/>
+
+    <bean id="robotT1000base" class="com.ua.entity.RobotT1000New" parent="baseModel">
+        <constructor-arg value="Green" index="3" type="java.lang.String"/>
+        <constructor-arg value="15200" index="4" type="int"/>
+        <constructor-arg value="true" index="5" type="boolean"/>
+
+
+    </bean>
+
+    <!--Use Base Class-->
+    <bean id="baseModel">
+        <constructor-arg ref="headSony" />
+        <constructor-arg ref="handSony" />
+        <constructor-arg ref="legSony"/>
+    </bean>
+
+</beans>

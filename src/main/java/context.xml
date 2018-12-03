@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-lazy-init="true">
 
-    <bean id="robotT1000" class="com.ua.entity.RobotT1000"/>
+    <import resource="toshiba.xml"/>
+    <import resource="sony.xml"/>
+
+    <bean id="robotT1000Old" class="com.ua.entity.RobotT1000Old"
+          p:head-ref="headSony"
+          p:hand-ref="handToshiba"
+          p:leg-ref="legSony">
+
+        <property name="color" value="Gold" />
+        <property name="age" value="1950" />
+        <property name="soundEnable" value="true"/>
+
+
+    </bean>
 
 </beans>
