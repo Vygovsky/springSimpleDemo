@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="contextBase.xml"/>
+
+    <!-- <bean class="com.ua.entity.RobotT1000Conveyor"/>-->
+
+    <bean id="t1000Conveyor" class="com.ua.entity.RobotT1000Conveyor">
+        <lookup-method name="createRobotConveyor" bean="robotT1000New"/>
+    </bean>
+
+
+    <bean id="t1000MapRobot" class="com.ua.entity.t1000Pool.T1000MapPool">
+        <constructor-arg name="robotMap">
+            <map>
+                <entry key="2001" value-ref="robotT1000New"/>
+                <entry key="2002" value-ref="robotT1000New"/>
+                <entry key="2018">
+                    <bean class="com.ua.entity.RobotT1000New" parent="baseModel">
+                        <constructor-arg value="white" index="3"/>
+                        <constructor-arg value="2008" index="4"/>
+                        <constructor-arg value="true" index="5"/>
+                    </bean>
+                </entry>
+            </map>
+        </constructor-arg>
+
+
+    </bean>
+    <!--    LIST ROBOTS-->
+    <!--<bean id="t1000pool" class="com.ua.entity.t1000Pool.T1000Pool">
+        <property name="robotCollection">
+
+            <list>
+                <ref bean="robotT1000New"/>
+                <bean class="com.ua.entity.RobotT1000New" parent="baseModel" scope="prototype">
+                    <constructor-arg value="white" index="3"/>
+                    <constructor-arg value="2008" index="4"/>
+                    <constructor-arg value="true" index="5"/>
+                </bean>
+            </list>
+        </property>
+    </bean>-->
+
+</beans>

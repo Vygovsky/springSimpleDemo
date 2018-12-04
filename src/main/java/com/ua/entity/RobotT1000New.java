@@ -62,7 +62,6 @@ public class RobotT1000New extends BaseModel {
         System.out.println("Color : " + color);
         System.out.println("Age : " + age);
         System.out.println("Sound : " + soundEnable);
-
     }
 
     @Override
