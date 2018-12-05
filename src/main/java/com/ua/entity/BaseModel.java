@@ -4,10 +4,17 @@ import com.ua.interface_.Hand;
 import com.ua.interface_.Head;
 import com.ua.interface_.Leg;
 import com.ua.interface_.Robot;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public abstract class BaseModel implements Robot {
+
+    @Autowired
     private Head baseHead;
+    @Autowired
     private Hand baseHand;
+    @Autowired
     private Leg baseLeg;
 
     public BaseModel() {
@@ -43,8 +50,6 @@ public abstract class BaseModel implements Robot {
     public void setBaseLeg(Leg baseLeg) {
         this.baseLeg = baseLeg;
     }
-
-
 
 
 }

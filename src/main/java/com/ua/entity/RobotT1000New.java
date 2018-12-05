@@ -3,7 +3,15 @@ package com.ua.entity;
 import com.ua.interface_.Hand;
 import com.ua.interface_.Head;
 import com.ua.interface_.Leg;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
+@Component
+/*@Qualifier(value = "model")*/
 public class RobotT1000New extends BaseModel {
 
     private String color;
@@ -11,6 +19,17 @@ public class RobotT1000New extends BaseModel {
     private boolean soundEnable;
 
     public RobotT1000New() {
+    }
+
+    @Bean
+    @Scope(value = ConfigurableListableBeanFactory.SCOPE_PROTOTYPE)
+    public RobotT1000New model() {
+        return new RobotT1000New();
+    }
+    @Bean
+    @Scope(value = ConfigurableListableBeanFactory.SCOPE_PROTOTYPE)
+    public RobotT1000New model2() {
+        return new RobotT1000New("Black",2000,true);
     }
 
     public RobotT1000New(Head baseHead, Hand baseHand, Leg baseLeg) {
@@ -33,6 +52,7 @@ public class RobotT1000New extends BaseModel {
     public String getColor() {
         return color;
     }
+
 
     public void setColor(String color) {
         this.color = color;
