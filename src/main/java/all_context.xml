@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:c="http://www.springframework.org/schema/c"
        xsi:schemaLocation=" http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
            http://www.springframework.org/schema/context
@@ -11,6 +11,15 @@
     <import resource="toshiba.xml"/>
     <import resource="sony.xml"/>
 
+
+    <bean  class="com.ua.entity.RobotT1000New" scope="prototype"
+          c:color="BLACK" c:soundEnable="false" c:age="2220">
+        <qualifier type="com.ua.interface_.MovieQualifier">
+            <attribute key="format" value="Black"/>
+            <attribute key="gener" value="2008"/>
+
+        </qualifier>
+    </bean>
 
     <bean id="t1000" class="com.ua.entity.RobotT1000New" scope="prototype"/>
 

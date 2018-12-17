@@ -1,8 +1,10 @@
 package com.ua.entity;
 
+import com.ua.eman.Color;
 import com.ua.interface_.Hand;
 import com.ua.interface_.Head;
 import com.ua.interface_.Leg;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.context.annotation.Bean;
@@ -11,11 +13,13 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-/*@Qualifier(value = "model")*/
+
 public class RobotT1000New extends BaseModel {
 
-    private String color;
+    private Color color;
+
     private int age;
+
     private boolean soundEnable;
 
     public RobotT1000New() {
@@ -26,35 +30,36 @@ public class RobotT1000New extends BaseModel {
     public RobotT1000New model() {
         return new RobotT1000New();
     }
+
     @Bean
     @Scope(value = ConfigurableListableBeanFactory.SCOPE_PROTOTYPE)
     public RobotT1000New model2() {
-        return new RobotT1000New("Black",2000,true);
+        return new RobotT1000New(Color.GOLD, 2000, true);
     }
 
-    public RobotT1000New(Head baseHead, Hand baseHand, Leg baseLeg) {
+  /*  public RobotT1000New(Head baseHead, Hand baseHand, Leg baseLeg) {
         super(baseHead, baseHand, baseLeg);
-    }
+    }*/
 
-    public RobotT1000New(String color, int age, boolean soundEnable) {
+    public RobotT1000New(Color color, int age, boolean soundEnable) {
         this.color = color;
         this.age = age;
         this.soundEnable = soundEnable;
     }
 
-    public RobotT1000New(Head baseHead, Hand baseHand, Leg baseLeg, String color, int age, boolean soundEnable) {
+ /*   public RobotT1000New(Head baseHead, Hand baseHand, Leg baseLeg, Color color, int age, boolean soundEnable) {
         super(baseHead, baseHand, baseLeg);
         this.color = color;
         this.age = age;
         this.soundEnable = soundEnable;
-    }
+    }*/
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
 
-    public void setColor(String color) {
+    public void setColor(Color color) {
         this.color = color;
     }
 

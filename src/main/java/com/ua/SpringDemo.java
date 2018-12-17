@@ -32,13 +32,12 @@ public class SpringDemo {
         System.out.println("terminator2 : " + terminator2);
         System.out.println("terminator3 : " + terminator3);
 */
-       /* System.out.println("-------------------------------------//-----------------");
+    /*    System.out.println("-------------------------------------//-----------------");
 
-        ApplicationContext context2 = new ClassPathXmlApplicationContext("converyorT1000.xml");
+        ApplicationContext context2 = new ClassPathXmlApplicationContext("all_context.xml");
         T1000Pool t1000Pool = (T1000Pool) context2.getBean("t1000pool");
-        t1000Pool.action();
+        t1000Pool.action();*/
 
-*/
        /* System.out.println("-------------------------------------//-----------------");
 
         ApplicationContext context3 = new ClassPathXmlApplicationContext("converyorT1000.xml");
@@ -48,18 +47,13 @@ public class SpringDemo {
        /* ApplicationContext contextBase = new ClassPathXmlApplicationContext("contextBaseAutowire.xml");
         RobotT1000New robotT1000New = (RobotT1000New) contextBase.getBean("robotT1000New");
         robotT1000New.action();*/
-/*
-        ApplicationContext context4 = new ClassPathXmlApplicationContext("all_context.xml");
+    /*    ApplicationContext context4 = new ClassPathXmlApplicationContext("all_context.xml");
         RobotT1000New robotT1000New = (RobotT1000New) context4.getBean("t1000");
         robotT1000New.action();*/
-
         ApplicationContext context4 = new ClassPathXmlApplicationContext("all_contextComponScan.xml");
         RobotT1000New robotT1000New = (RobotT1000New) context4.getBean("model");
-        RobotT1000New robotT1000New2 = (RobotT1000New) context4.getBean("model2");
+       RobotT1000New robotT1000New2 = (RobotT1000New) context4.getBean("model2");
         robotT1000New.action();
         robotT1000New2.action();
-
-
-
     }
 }
